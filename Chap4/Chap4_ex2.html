@@ -1,0 +1,44 @@
+function reverse(tab)
+{
+	var tabr=[];
+	var length=tab.length;
+	for(var i=0;i<l;i++)
+	{
+		tabr[i]=tab[l-1-i];
+	}
+	return tabr;
+}
+
+
+var tab=[1,2,3,4,5];
+function reverse(tab)
+{
+	var tabr=[];
+	var length=tab.length;
+	for(var i=0;i<length;i++)
+	{
+		tabr[i]=tab[length-1-i];
+	}
+	return tabr;
+}
+
+console.log(reverse(tab));
+console.log(tab);
+
+
+
+var tab=[1,2,3,4,5];
+function reverseArrayInPlace(array)
+{
+	for(i=0;i<(Math.floor(array.length/2));i++)
+    {
+      var old=array[i];
+      array[i]=array[array.length-1-i];
+      array[array.length-1-i]=old;
+    }
+  	return array;
+}
+
+console.log(tab);
+console.log(reverseArrayInPlace(tab));
+console.log(tab);

@@ -1,0 +1,92 @@
+var size=8;
+var text="";
+for(var row=1;row<=size;row++)
+{
+	if(row%2==0)
+	{
+		for(var col=1;col<=size;col++)
+		{
+			if(col%2==0)
+			{
+				text+="#";
+			}
+			else
+			{
+				text+=" ";
+			}
+		}
+	}
+	if(!row%2==0)
+	{
+		for(var col=1;col<=size;col++)
+		{
+			if(col%2==0)
+			{
+				text+=" ";
+			}
+			else
+			{
+				text+="#";
+			}
+		}
+		
+	}
+}
+
+
+
+var size=8;
+var text="";
+for(var row=0;row<size;row++)
+{
+	if(row%2==0)
+	{
+		for(var col=0;col<size;col++)
+		{
+			if(col%2==0)
+			{
+				text+="#";
+			}
+			else
+			{
+				text+=" ";
+			}
+		}
+      	text+="\n";
+	}
+	else
+	{
+		for(var col=0;col<size;col++)
+		{
+			if(col%2==0)
+			{
+				text+=" ";
+			}
+			else
+			{
+				text+="#";
+			}
+		}
+      	text+="\n";
+	}
+}
+console.log(text);
+
+
+
+
+var size = 8;
+
+var board = "";
+
+for (var y = 0; y < size; y++) {
+  for (var x = 0; x < size; x++) {
+    if ((x + y) % 2 == 0)
+      board += " ";
+    else
+      board += "#";
+  }
+  board += "\n";
+}
+
+console.log(board);

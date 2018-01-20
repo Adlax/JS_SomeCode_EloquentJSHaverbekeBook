@@ -1,0 +1,167 @@
+function range1(start,end)
+{
+	var tab=[];
+	var nb=end-start;
+	for(var i=0;i<nb;i++)
+	{
+		tab[i]=start+i;
+	}
+	return tab;
+}
+
+function range1bis(start,end)
+{
+	var tab=[];
+	var nb=start-end;
+	for(var i=0;i<nb;i++)
+	{
+		tab[i]=start-i;
+	}
+	return tab;
+}
+
+
+
+function sum(tab)
+{
+	var sum=0;
+	for(var ele in tab)
+	{
+		sum+=ele;
+	}
+	return sum;
+}
+
+function range2(start,end,step)
+{
+	if(step==null)
+	{
+		return range1(start,end);
+	}
+	var tab=[];
+	var count=1;
+	while(start+(step*count)<=end)
+	{
+		tab.push(start+(step*count));
+		count++;
+	}
+	return tab;
+}
+
+function range3(start,end,step)
+{
+	if(step==null){return range1(start,end);}
+	if(step>0)
+	{
+		if(start<=end){return range2(start,end,step);}
+		else{console.log("Impossible");}
+	}
+	if(step<0)
+	{
+		if(start>=end)
+		{	
+			return range1bis(start,end);
+		}
+		else
+		{console.log("Impossible");}
+	}
+
+}
+
+function range1(start,end)
+{
+	var tab=[];
+	var nb=end-start;
+	for(var i=0;i<=nb;i++)
+	{
+		tab[i]=start+i;
+	}
+	return tab;
+}
+
+function range1bis(start,end)
+{
+	var tab=[];
+	var nb=start-end;
+	for(var i=0;i<=nb;i++)
+	{
+		tab[i]=start-i;
+	}
+	return tab;
+}
+
+
+
+
+
+
+function sum(tab)
+{
+	var sum=0;
+	var length=tab.length;
+	for(var i=0;i<length;i++)
+    {
+		sum=sum+tab[i];
+	}
+	return sum;
+}
+
+function range2(start,end,step)
+{
+	if(step==null)
+	{
+		return range1(start,end);
+	}
+	var tab=[];
+	var count=0;
+	while(start+(step*count)<=end)
+	{
+		tab.push(start+(step*count));
+		count++;
+	}
+	return tab;
+}
+
+function range2bis(start,end,step)
+{
+	if(step==null)
+	{
+		return range1(start,end);
+	}
+	var tab=[];
+	var count=0;
+	while(start+(step*count)>=end)
+	{
+		tab.push(start+(step*count));
+		count++;
+	}
+	return tab;
+}
+
+
+function range3(start,end,step)
+{
+	if(step==null){return range1(start,end);}
+	if(step>0)
+	{
+		if(start<=end){return range2(start,end,step);}
+		else{console.log("Impossible");}
+	}
+	if(step<0)
+	{
+		if(start>=end)
+		{	
+			return range2bis(start,end,step);
+		}
+		else
+		{console.log("Impossible");}
+	}
+
+}
+
+console.log(range1(2,4));
+console.log(range1bis(5,1));
+console.log(sum([3,6,3,10]));
+console.log(range2(2,7,3));
+console.log(range3(2,9,2));
+console.log(range3(9,2,-2));

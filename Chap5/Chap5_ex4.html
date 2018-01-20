@@ -1,0 +1,43 @@
+function every(array,predicate)
+{
+	for(var i=0;i<array.length;i++)
+	{
+		if(predicate(array[i])!==true) return false;
+	}
+	return true;
+}
+
+function some(array,predicate)
+{
+	for(var i=0;i<array.length;i++)
+	{
+		if(predicate(array[i]==true)) return true;
+	}
+	return false;
+}
+
+
+
+
+function every(array,predicate)
+{
+	for(var i=0;i<array.length;i++)
+	{
+		if(!predicate(array[i])) return false;
+	}
+	return true;
+}
+
+function some(array,predicate)
+{
+	for(var i=0;i<array.length;i++)
+	{
+		if(predicate(array[i])) return true;
+	}
+	return false;
+}
+
+console.log(every([NaN,NaN],isNaN))
+console.log(every([NaN,NaN,2],isNaN))
+console.log(some([1,3,7,NaN,9],isNaN))
+console.log(some([1,3,7,3,9],isNaN))

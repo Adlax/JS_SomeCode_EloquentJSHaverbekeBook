@@ -1,0 +1,49 @@
+function ArraySeq(array){
+	this.pos=-1;
+	this.array=array;
+}
+
+function RangeSeq(from,to){
+	this.pos=from-1;
+	this.to=to;
+}
+
+ArraySeq.prototype.next = function(){
+	if(this.pos>=this.array.length-1){return false;}
+	else{
+		this.pos++;
+		return true;
+	}
+}
+
+RangeSeq.prototype.next = function(){
+	if(this.pos>=this.to){return false;}
+	else{
+		this.pos++;
+		return true;
+	}
+}
+
+ArraySeq.prototype.current = function(){
+	console.log(this.array[this.pos]);
+}
+
+RangeSeq.prototype.current = function(){
+	console.log(this.pos);
+}
+
+function logFive(seq){
+	for(var i=0;i<5;i++){
+		if(!seq.next()){break;}
+		else{
+			seq.current();
+        }
+	}
+}
+
+
+
+var seq1 = new ArraySeq([1,2,3]);
+logFive(seq1);
+var seq2 = new RangeSeq(100,1000);
+logFive(seq2);
